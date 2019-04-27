@@ -1,0 +1,36 @@
+.card{
+    text-align: center;
+    display: inline-block;
+    margin-left: 20px;
+    margin: 20px;
+    background-color: black;
+    width: 200px;
+    height: 450px;
+
+}
+.card-deck{
+  margin: 30px;
+}
+.card-title{
+  color:rgb(97, 172, 233) ;
+}
+button{
+  margin: 20px;
+  background-color: rgb(97, 172, 233);
+  font-style: italic;
+  box-shadow: #414242 2px 2px;
+  font-weight: bold;
+}
+button:hover{
+  background-color: rgb(155, 196, 233);
+
+}
+h1{
+  margin: 20px;
+  color:  rgb(97, 172, 233);
+  text-shadow: 2px 2px #414242;
+}
+.header{
+  display: inline-block;
+  width: 100%;
+}

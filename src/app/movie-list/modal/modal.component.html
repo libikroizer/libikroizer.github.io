@@ -1,0 +1,68 @@
+<form [formGroup]='movieForm' (ngSubmit)="onSubmit()" >
+  <div role="document" class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">{{title}}</h4>
+        </div>
+        <div class="form-group">
+          <div class="modal-body">
+            <label for="title">Title:</label>
+            <input
+            type="text"
+            id="title"
+            formControlName="title"
+            required
+            name="title"
+            class="form-control">
+            <span *ngIf="!movieForm.get('title').valid && movieForm.get('title').touched " class='help-block'>
+              <span *ngIf="movieForm.get('title').errors['titleIsExists'] && !editMode"  class='help-block'>
+                this title already exsits!</span>
+                  <span *ngIf="movieForm.get('title').errors['required']">
+                      please enter a valid title!
+                  </span>
+              </span>
+            <br>
+            <label for="title">Year:</label>
+            <input
+            type="text"
+            id="year"
+            formControlName="year"
+            required
+            class="form-control">
+            <span *ngIf="!movieForm.get('year').valid && movieForm.get('year').touched" class='help-block'>please enter a valid year!</span>
+            <br>
+            <label for="title">Genre:</label>
+            <input
+            type="text"
+            id="genre"
+            formControlName="genre"
+            required
+            class="form-control">
+            <span *ngIf="!movieForm.get('genre').valid && movieForm.get('genre').touched" class='help-block'>please enter a valid genre!</span>
+            <br>
+            <label for="title">Director:</label>
+            <input
+            type="text"
+            id="director"
+            formControlName="director"
+            required
+            class="form-control">
+            <span *ngIf="!movieForm.get('director').valid && movieForm.get('director').touched" class='help-block'>please enter a valid director name!</span>
+            <br>
+            <label for="title">Runtime:</label>
+            <input
+            type="text"
+            id="runtime"
+            required
+            formControlName="runtime"
+            class="form-control">
+            <span *ngIf="!movieForm.get('runtime').valid && movieForm.get('runtime').touched" class='help-block'>please enter a valid runtime length!</span>
+          </div>
+        </div>
+      <div class="modal-footer">
+          <button type="submit" class="btn btn-success" [disabled]=(!movieForm.valid) >Save</button>
+          <button type="button" class="btn btn-danger" (click)="closeModal('Save click')">Cancel</button>
+        </div>
+      </div>
+    </div>
+</form>

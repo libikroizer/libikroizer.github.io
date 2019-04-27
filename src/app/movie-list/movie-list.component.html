@@ -1,0 +1,23 @@
+
+<div class="header">
+      <h1>Herolo Cinema</h1>
+      <button class='btn' (click)="open(movieEmpty)">Add New Movie</button>
+</div>
+
+<div class="card-deck">
+  <a *ngFor="let movie of movies">
+    <div class="card" style="width: 250px;">
+      <img class="card-img-top"  src="{{ movie.Poster }}" >
+      <div class="card-body">
+        <h5 class="card-title">{{movie.Title | nonEnglish | titlecase}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">By {{movie.Director}}</h6>
+        <a (click)="open(movie)">
+           <i class="fas fa-pencil-alt" style='color:rgb(97, 172, 233)' ></i>
+        </a>
+        <a class="btn" (click)="onDelete(movie)">
+          <i class="fas fa-trash" style='color:rgb(97, 172, 233)'></i>
+       </a>
+      </div>
+    </div>
+  </a>
+</div>
